@@ -1,21 +1,5 @@
-# Real-Time Multiplayer Game: project notes
+# Real-Time Multiplayer Game notes
 
-## Goal
+A multiplayer game where players collect coins in the same room.
 
-Share a small game between browser clients.
-
-## Main challenge
-
-Keep concurrent moves and scoring consistent.
-
-## Implementation choice
-
-Authoritative server state protected by a lock. The repository is intentionally small, with its main application code and tests kept close together.
-
-## Outcome and validation
-
-The local workflow is implemented, with automated checks covering its core behaviour. See the README for limits and any service-dependent features. External API tests use simulated clients rather than paid or private live data. This is an implementation case study, not a claim of commercial use or earlier completion.
-
-## Next improvements
-
-Improve the interface based on real usage and extend tests when adding new behaviour. Keep changes incremental so the project remains easy to explain.
+I used WebSockets to send player positions between the server and browsers. A lock keeps shared game state consistent when players move at the same time.
